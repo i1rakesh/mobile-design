@@ -1,24 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Payment from './components/Payment'
+import Home from './components/Home'
+import Product from './components/Product'
+import {Routes, Route, BrowserRouter} from "react-router-dom";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='flex justify-center items-center overflow-y-auto m-0 p-0'>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/">
+          <Route index element={<Home/>} />
+          <Route path="/product" element={<Product/>}/>
+          <Route path="/payment" element ={<Payment/>}/>
+      </Route>
+    </Routes>
+    </BrowserRouter>
+      
     </div>
+    
   );
 }
 
